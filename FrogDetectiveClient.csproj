@@ -1,0 +1,122 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>FrogDetectiveClient</AssemblyName>
+    <Product>My first plugin</Product>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>FrogDetectiveClient</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Archipelago.MultiClient.Net" Version="6.3.1" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/core/0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx.IL2CPP">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/core/BepInEx.IL2CPP.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Il2Cppmscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Il2CppSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Il2CppSystem.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem.Xml">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Il2CppSystem.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/core/UnhollowerBaseLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnhollowerRuntimeLib">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/core/UnhollowerRuntimeLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>/mnt/GameCollectionDos/SteamLibrary/steamapps/common/Frog_Detective_1/BepInEx/unhollowed/UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
