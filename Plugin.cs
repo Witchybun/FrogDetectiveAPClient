@@ -1,32 +1,22 @@
-﻿﻿using BepInEx;
-using BepInEx.IL2CPP;
+﻿﻿﻿using BepInEx;
 using BepInEx.Logging;
-using HarmonyLib;
-using Newtonsoft.Json;
-using System.IO;
-using UnhollowerRuntimeLib;
-using UnityEngine;
+using BepInEx.Unity.IL2CPP;
+using MyCroakinBod;
 
+namespace FrogDetectiveAP;
 
-namespace FrogDetectiveAP 
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class Plugin : BasePlugin
 {
+    public const string PluginGUID = "com.Albrekka.FroggyAP";
+    public const string PluginName = "FroggyAP";
+    public const string PluginVersion = "0.0.1";
+    internal static new ManualLogSource Log;
 
-    [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-    public class Plugin : BaseUnityPlugin 
+    public override void Load()
     {
-        public const string PluginGUID = "com.Albrekka.FrogDetectiveAP";
-        public const string PluginName = "FrogDetectiveAP";
-        public const string PluginVersion = "0.0.1";
-        public static string SettingsPath = Application.persistentDataPath + "/Randomizer/Settings.json";
-        public static string ItemTrackerPath = Application.persistentDataPath + "/Randomizer/ItemTracker.json";
-        public static string SpoilerLogPath = Application.persistentDataPath + "/Randomizer/Spoiler.log";
-        public ManualLogSource FroggyLogger;
-
-        public void Awake()
-        {
-            FroggyLogger = new ManualLogSource("FrogDetectiveAP");
-            FroggyLogger.LogInfo("Ribbit!  We're live!");
-        }
+        // Plugin startup logic
+        Log = base.Log;
+        Log.LogInfo($"Plugin {PluginGUID} is loaded!");
     }
 }
-            
